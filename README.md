@@ -1,38 +1,76 @@
-This project uses the A* pathfinding algorithm to compute the optimal ambulance route in Kolkata using real road network data from OpenStreetMap.
+This project builds a smart ambulance decision and routing system for Kolkata.
+It uses two artificial intelligence search algorithms:
 
-Features
+AO* → decides which hospital is the best choice for the patient
 
-Real-world road network using OpenStreetMap
+A* → finds the fastest or safest road route for the ambulance
 
-A* search algorithm for pathfinding
+The system uses real road network data from OpenStreetMap and visualizes the route on an interactive map.
 
-Traffic-weighted routing
+Problem
 
-Interactive map visualization using Folium
+During emergencies, an ambulance must quickly decide:
 
-Distance and travel time estimation
+Which hospital should the patient go to?
 
-Technologies
+What is the fastest or safest route to reach the hospital?
 
-Python
+A normal navigation system only finds the shortest path.
+But emergency systems must also consider traffic, distance, and hospital availability.
 
-OSMnx
+A*
+Step 1
+Load the Kolkata road network from OpenStreetMap.
 
-NetworkX
+Step 2
+Convert roads into a graph structure.
 
-Folium
+Nodes → road intersections
 
-A* Algorithm
+Edges → roads
 
-Output
+Step 3
+Choose a starting location for the ambulance.
 
-The system generates an interactive map showing the optimal ambulance route.
-AI Ambulance Route Optimization using A*
+Example:
 
-Implemented A* pathfinding on real-world road networks using OpenStreetMap
+Park Street, Kolkata
 
-Designed traffic-aware edge weighting for safer routing
+Step 4
+Choose a hospital destination.
 
-Built interactive geospatial visualization using Folium
+Example:
 
-Estimated travel distance and time for emergency response systems
+AMRI Hospital
+
+Step 5
+Apply the A* algorithm to compute the optimal route.
+
+Step 6
+Calculate:
+
+route distance
+
+estimated travel time
+
+Step 7
+Visualize the route using an interactive map.
+
+AO*
+Step 1
+Load the Kolkata road network from OpenStreetMap.
+
+Step 2
+Use AO* to compare hospital options.
+
+Step 3
+Select the best hospital based on total cost.
+
+Step 4
+Run A* to compute routes to hospitals.
+
+Step 5
+Calculate distance and travel time.
+
+Step 6
+Display routes and results on an interactive map.
